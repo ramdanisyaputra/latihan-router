@@ -1,5 +1,6 @@
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
+import { Link } from "react-router-dom";
 
 class Home extends React.Component{
     state = {
@@ -38,8 +39,10 @@ class Home extends React.Component{
                 <div style={container}>
                     { skills.map(item => 
                         <div key={item.id} style={card}>
-                            <img src={item.image} alt={item.name} style={img} />
-                            <h3>{item.name}</h3>
+                            <Link to={`/detail/${item.id}`}>
+                                <img src={item.image} alt={item.name} style={img} />
+                                <h3>{item.name}</h3>
+                            </Link>
                         </div>
                     ) }
                 </div>
