@@ -1,19 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return(
         <div style={nav}>
             <h1>Kodeakademia</h1>
             <ul style={myUl}>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
+                <li><Link to="/" style={link}>Home</Link></li>
+                <li><Link to="/about" style={link}>About</Link></li>
+                <li><Link to="/contact" style={link}>Contact</Link></li>
             </ul>
         </div>
     )
 }
 
 export default Navbar;
+
+const link = {
+    textDecoration: "none",
+    color: "#fff"
+}
 
 const nav = {
     display: "flex",
